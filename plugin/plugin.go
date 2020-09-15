@@ -386,7 +386,7 @@ func buildSession() (*api.Client, error) {
 	var session *api.Client
 	var err2 error
 	if defaultToken != "" {
-		session, err2 = api.TokenSession(defaultEndpoint, defaultToken)
+		session, err2 = api.TokenSessionProxy(defaultEndpoint, defaultToken, false)
 	} else {
 		err2 = fmt.Errorf("Must have a token specified")
 	}
